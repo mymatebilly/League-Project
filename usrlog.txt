@@ -1,0 +1,249 @@
+-- EXECUTING ALL IN 'SQL 1'
+--
+-- EXECUTING ALL IN 'SQL 1'
+--
+-- At line 1:
+INSERT INTO "Champions" VALUES (1, 'Alistar', 'M', 'Cornes', 1350, '21/02/2009', 'Tank', 'Iron Solari', 0, 0, 1);
+-- Result: FOREIGN KEY constraint failed
+-- EXECUTING ALL IN 'SQL 1'
+--
+-- At line 1:
+INSERT INTO "Champions" VALUES (1, 'Alistar', 'M', 'Cornes', 1350, '21/02/2009', 'Tank', 'Iron Solari', 0, 0, 1);
+-- Result: FOREIGN KEY constraint failed
+-- EXECUTING ALL IN 'SQL 1'
+--
+-- At line 1:
+INSERT INTO "Champions" VALUES (1, 'Alistar', 'M', 'Cornes', 1350, '21/02/2009', 'Tank', 'Iron Solari', 0, 0, 1);
+-- Result: query executed successfully. Took 0ms, 1 rows affected
+-- EXECUTING ALL IN 'SQL 1'
+--
+-- At line 1:
+INSERT INTO "Champions" VALUES (2, 'Annie', 'F', 'Feu et Tibbers', 450, '21/02/2009', 'Mage', 'Moissoneur nocturne', 0, 0, 2);
+-- Result: query executed successfully. Took 0ms, 1 rows affected
+-- At line 2:
+INSERT INTO "Champions" VALUES (3, 'Ashe', 'F', 'Arc', 450, '21/02/2009', 'Tireur', "Arc bouclier de l'immortel", 0, 0, 3);
+-- Result: query executed successfully. Took 0ms, 1 rows affected
+-- At line 3:
+INSERT INTO "Champions" VALUES (4, 'Fiddlesticks', 'NA', 'Faucille', 1350, '21/02/2009', 'Mage', 'Moissoneur nocturne', 0, 0, 4);
+-- Result: query executed successfully. Took 0ms, 1 rows affected
+-- At line 4:
+INSERT INTO "Champions" VALUES (5, 'Jax', 'M', 'Lampadaire', 1350, '21/02/2009', 'Bruiser', 'Force de la trinité', 0, 0, 5);
+-- Result: query executed successfully. Took 0ms, 1 rows affected
+-- At line 5:
+INSERT INTO "Champions" VALUES (6, 'Kayle', 'F', 'Epée', 450, '21/02/2009', 'Tireur', 'Créateur de faille', 0, 0, 6);
+-- Result: query executed successfully. Took 0ms, 1 rows affected
+-- At line 6:
+INSERT INTO "Champions" VALUES (7, 'Maître Yi', 'M', 'Epée', 450, '21/02/2009', 'Bruiser', 'Tueur de Kraken', 0, 0, 7);
+-- Result: query executed successfully. Took 0ms, 1 rows affected
+-- At line 7:
+INSERT INTO "Champions" VALUES (8, 'Morgana', 'F', 'Magie', 1350, '21/02/2009', 'Mage', 'Tournament de Liandrey', 0, 0, 8);
+-- Result: query executed successfully. Took 0ms, 1 rows affected
+-- At line 8:
+INSERT INTO "Champions" VALUES (9, 'Nunu et Wilump', 'MM', 'Neige', 450, '21/02/2009', 'Tank', 'Iron Solari', 0, 0, 9);
+-- Result: query executed successfully. Took 0ms, 1 rows affected
+-- At line 9:
+INSERT INTO "Champions" VALUES (10, 'Sion', 'M', 'Hache', 1350, '21/02/2009', 'Tank', 'Gantelet cryo-pirique', 0, 0, 10);
+-- Result: query executed successfully. Took 0ms, 1 rows affected
+-- At line 10:
+INSERT INTO "Champions" VALUES (11, 'Ryze', 'M', 'Magie', 450, '21/02/2009', 'Mage', 'Gel éternel', 0, 0, 11);
+-- Result: query executed successfully. Took 0ms, 1 rows affected
+-- At line 11:
+INSERT INTO "Champions" VALUES (12, 'Sivir', 'F', 'Boomerang Rond', 450, '21/02/2009', 'Tireur', 'Tueur de Kraken', 0, 0, 12);
+-- Result: query executed successfully. Took 0ms, 1 rows affected
+-- At line 12:
+INSERT INTO "Champions" VALUES (13, 'Soraka', 'F', 'Magie', 450, '21/02/2009', 'Mage', 'Pierre de lune', 0, 0, 13);
+-- Result: query executed successfully. Took 0ms, 1 rows affected
+-- At line 13:
+INSERT INTO "Champions" VALUES (14, 'Teemo', 'M', 'Sarbacane', 1350, '21/02/2009', 'Mage', 'Créateur de faille', 0, 0, 14);
+-- Result: query executed successfully. Took 0ms, 1 rows affected
+-- At line 14:
+INSERT INTO "Champions" VALUES (15, 'Trsitana', 'F', 'Canon', 1350, '21/02/2009', 'Tireur', 'Tueur de Kraken', 0, 0, 15);
+-- Result: query executed successfully. Took 0ms, 1 rows affected
+-- At line 15:
+INSERT INTO "Champions" VALUES (16, 'Twisted Fate', 'M', 'Cartes', 1350, '21/02/2009', 'Mage', 'Gel éternel', 0, 0, 16);
+-- Result: query executed successfully. Took 0ms, 1 rows affected
+-- At line 16:
+INSERT INTO "Champions" VALUES (17, 'Warwick', 'M', 'Crocs', 450, '21/02/2009', 'Tank', 'Cape solaire', 0, 0, 17);
+-- Result: query executed successfully. Took 0ms, 1 rows affected
+-- At line 17:
+INSERT INTO "Champions" VALUES (18, 'Irelia', 'F', 'Lames', 4850, '16/11/2016', 'Bruiser', 'Eviscérateur', 0, 0, 18);
+-- Result: query executed successfully. Took 0ms, 1 rows affected
+-- At line 18:
+INSERT INTO "Champions" VALUES (19, 'Jhin', 'M', 'Pistolet', 6300, '01/02/2016', 'Tireur', 'Force du vent', 0, 0, 19);
+-- Result: query executed successfully. Took 0ms, 1 rows affected
+-- At line 19:
+INSERT INTO "Champions" VALUES (20, 'Sett', 'M', 'Poings', 6300, '14/01/2020', 'Bruiser', 'Eviscérateur', 0, 0, 20);
+-- Result: query executed successfully. Took 0ms, 1 rows affected
+-- At line 20:
+INSERT INTO "Champions" VALUES (21, 'Neeko', 'F', 'Magie', 6300, '05/12/2018', 'Mage', 'Ceinture-roquette Hextech', 0, 0, 21);
+-- Result: query executed successfully. Took 0ms, 1 rows affected
+-- At line 21:
+INSERT INTO "Champions" VALUES (22, 'Miss Fortune', 'F', 'Pistolets', 6300, '08/09/2010', 'Tireur', 'Force du vent', 0, 0, 22);
+-- Result: query executed successfully. Took 0ms, 1 rows affected
+-- At line 22:
+INSERT INTO "Champions" VALUES (23, 'Jinx', 'F', 'Canon', 4800, '10/10/2013', 'Tireur', 'Tueur de Kraken', 0, 0, 23);
+-- Result: query executed successfully. Took 0ms, 1 rows affected
+-- At line 23:
+INSERT INTO "Champions" VALUES (24, 'Akali', 'F', 'Kunaï', 3150, '11/05/2010', 'Assassin', 'Créateur de faille', 0, 0, 24);
+-- Result: query executed successfully. Took 0ms, 1 rows affected
+-- At line 24:
+INSERT INTO "Champions" VALUES (25, 'Ahri', 'F', 'Magie', 3150, '14/12/2011', 'Mage', 'Echo de Luden', 0, 0, 25);
+-- Result: query executed successfully. Took 0ms, 1 rows affected
+-- EXECUTING ALL IN 'SQL 1'
+--
+-- At line 1:
+INSERT INTO "Skins" VALUES (1, 1, "Bête lunaire", "1350 RP", "2021");
+-- Result: foreign key mismatch - "Skins" referencing "Champions"
+-- EXECUTING ALL IN 'SQL 1'
+--
+-- At line 1:
+INSERT INTO "Skins" VALUES (1, 1, "Bête lunaire", "1350 RP", "2021");
+-- Result: query executed successfully. Took 0ms, 1 rows affected
+-- At line 2:
+INSERT INTO "Skins" VALUES (2, 1, "Hextech", "10 Gems", "16/03/2018");
+-- Result: query executed successfully. Took 0ms, 1 rows affected
+-- At line 3:
+INSERT INTO "Skins" VALUES (3, 2, "Intergalactique", "1350 RP", "16/10/2017");
+-- Result: query executed successfully. Took 0ms, 1 rows affected
+-- At line 4:
+INSERT INTO "Skins" VALUES (4, 2, "Coeur Tendre", "750 RP", "13/02/2015");
+-- Result: query executed successfully. Took 0ms, 1 rows affected
+-- At line 5:
+INSERT INTO "Skins" VALUES (5, 3, "Cosmique", "1350 RP", "21/08/2018");
+-- Result: query executed successfully. Took 0ms, 1 rows affected
+-- At line 6:
+INSERT INTO "Skins" VALUES (6, 3, "De l'ouest", "1850 RP", "10/10/2019");
+-- Result: query executed successfully. Took 0ms, 1 rows affected
+-- At line 7:
+INSERT INTO "Skins" VALUES (7, 4, "Prétorien", "1350 RP", "08/11/2018");
+-- Result: query executed successfully. Took 0ms, 1 rows affected
+-- At line 8:
+INSERT INTO "Skins" VALUES (8, 4, "Réanimé", "1350 RP", "29/04/2015");
+-- Result: query executed successfully. Took 0ms, 1 rows affected
+-- At line 9:
+INSERT INTO "Skins" VALUES (9, 5, "Au bâton divin", "1350 RP", "11/01/2018");
+-- Result: query executed successfully. Took 0ms, 1 rows affected
+-- At line 10:
+INSERT INTO "Skins" VALUES (10, 5, "Conquérant", "1350 RP", "28/04/2021");
+-- Result: query executed successfully. Took 0ms, 1 rows affected
+-- At line 11:
+INSERT INTO "Skins" VALUES (11, 6, "Tueuse de dragon", "1350 RP", "31/03/2021");
+-- Result: query executed successfully. Took 0ms, 1 rows affected
+-- At line 12:
+INSERT INTO "Skins" VALUES (12, 6, "Viridienne", "520 RP", "31/05/2010");
+-- Result: query executed successfully. Took 0ms, 1 rows affected
+-- At line 13:
+INSERT INTO "Skins" VALUES (13, 7, "L'assassin", "390 RP", "17/12/2009");
+-- Result: query executed successfully. Took 0ms, 1 rows affected
+-- At line 14:
+INSERT INTO "Skins" VALUES (14, 7, "Cosmique", "1350 RP", "26/04/2017");
+-- Result: query executed successfully. Took 0ms, 1 rows affected
+-- At line 15:
+INSERT INTO "Skins" VALUES (15, 8, "Lame Sinistre", "750 RP", "01/12/2010");
+-- Result: query executed successfully. Took 0ms, 1 rows affected
+-- At line 16:
+INSERT INTO "Skins" VALUES (16, 8, "Sorcière édition prestige", "975 RP", "19/10/2016");
+-- Result: query executed successfully. Took 0ms, 1 rows affected
+-- At line 17:
+INSERT INTO "Skins" VALUES (17, 9, "Astro-groove", "1350 RP", "03/04/2021");
+-- Result: query executed successfully. Took 0ms, 1 rows affected
+-- At line 18:
+INSERT INTO "Skins" VALUES (18, 9, "Du solstice", "520 RP", "17/12/2009");
+-- Result: query executed successfully. Took 0ms, 1 rows affected
+-- At line 19:
+INSERT INTO "Skins" VALUES (19, 10, "Mecha", "1820 RP", "12/04/2016");
+-- Result: query executed successfully. Took 0ms, 1 rows affected
+-- At line 20:
+INSERT INTO "Skins" VALUES (20, 10, "Des glaces noires", "1350 RP", "31/03/2021");
+-- Result: query executed successfully. Took 0ms, 1 rows affected
+-- At line 21:
+INSERT INTO "Skins" VALUES (21, 11, "Tribal", "520 RP", "04/03/2010");
+-- Result: query executed successfully. Took 0ms, 1 rows affected
+-- At line 22:
+INSERT INTO "Skins" VALUES (22, 11, "du championnat", "1350 RP", "26/09/2019");
+-- Result: query executed successfully. Took 0ms, 1 rows affected
+-- At line 23:
+INSERT INTO "Skins" VALUES (23, 12, "Du blizzard", "975 RP", "19/12/2013");
+-- Result: query executed successfully. Took 0ms, 1 rows affected
+-- At line 24:
+INSERT INTO "Skins" VALUES (24, 12, "Lune de sang", "1350 RP", "10/01/2019");
+-- Result: query executed successfully. Took 0ms, 1 rows affected
+-- At line 25:
+INSERT INTO "Skins" VALUES (25, 13, "Gardienne des étoiles", "1350 RP", "06/09/2017");
+-- Result: query executed successfully. Took 0ms, 1 rows affected
+-- At line 26:
+INSERT INTO "Skins" VALUES (26, 13, "Hérault de l'aube", "1820 RP", "27/11/2019");
+-- Result: query executed successfully. Took 0ms, 1 rows affected
+-- At line 27:
+INSERT INTO "Skins" VALUES (27, 14, "Diablotin", "1350 RP", "19/10/2016");
+-- Result: query executed successfully. Took 0ms, 1 rows affected
+-- At line 28:
+INSERT INTO "Skins" VALUES (28, 14, "Fleur spirituelle", "1350 RP", "21/07/2020");
+-- Result: query executed successfully. Took 0ms, 1 rows affected
+-- At line 29:
+INSERT INTO "Skins" VALUES (29, 15, "L'elfe sérieuse", "520 RP", "31/12/2009");
+-- Result: query executed successfully. Took 0ms, 1 rows affected
+-- At line 30:
+INSERT INTO "Skins" VALUES (30, 15, "Dragonnière", "1820 RP", "03/12/2015");
+-- Result: query executed successfully. Took 0ms, 1 rows affected
+-- At line 31:
+INSERT INTO "Skins" VALUES (31, 16, "Des enfers", "975 RP", "25/10/2012");
+-- Result: query executed successfully. Took 0ms, 1 rows affected
+-- At line 32:
+INSERT INTO "Skins" VALUES (32, 16, "Tango", "520 RP", "04/10/2010");
+-- Result: query executed successfully. Took 0ms, 1 rows affected
+-- At line 33:
+INSERT INTO "Skins" VALUES (33, 17, "De feu", "975 RP", "08/03/2011");
+-- Result: query executed successfully. Took 0ms, 1 rows affected
+-- At line 34:
+INSERT INTO "Skins" VALUES (34, 17, "Dieu ancien", "1350 RP", "12/09/2021");
+-- Result: query executed successfully. Took 0ms, 1 rows affected
+-- At line 35:
+INSERT INTO "Skins" VALUES (35, 18, "A l'épée divine", "1350 RP", "04/09/2018");
+-- Result: query executed successfully. Took 0ms, 1 rows affected
+-- At line 36:
+INSERT INTO "Skins" VALUES (36, 18, "Cyber", "975 RP", "11/10/2011");
+-- Result: query executed successfully. Took 0ms, 1 rows affected
+-- At line 37:
+INSERT INTO "Skins" VALUES (37, 19, "Démiurge cosmique", "1820 RP", "13/06/2019");
+-- Result: query executed successfully. Took 0ms, 1 rows affected
+-- At line 38:
+INSERT INTO "Skins" VALUES (38, 19, "Project", "1350 RP", "22/11/2017");
+-- Result: query executed successfully. Took 0ms, 1 rows affected
+-- At line 39:
+INSERT INTO "Skins" VALUES (39, 20, "Dragon d'obsidienne", "1350 RP", "2020");
+-- Result: query executed successfully. Took 0ms, 1 rows affected
+-- At line 40:
+INSERT INTO "Skins" VALUES (40, 20, "du royaume des méchas", "1350 RP", "2019");
+-- Result: query executed successfully. Took 0ms, 1 rows affected
+-- At line 41:
+INSERT INTO "Skins" VALUES (41, 21, "Gardienne des étoiles", "1350 RP", "12/09/2019");
+-- Result: query executed successfully. Took 0ms, 1 rows affected
+-- At line 42:
+INSERT INTO "Skins" VALUES (42, 21, "Merveille hivernale", "1350 RP", "05/12/2018");
+-- Result: query executed successfully. Took 0ms, 1 rows affected
+-- At line 43:
+INSERT INTO "Skins" VALUES (43, 22, "Sorcière édition prestige", "100 PP", "24/10/2019");
+-- Result: query executed successfully. Took 0ms, 1 rows affected
+-- At line 44:
+INSERT INTO "Skins" VALUES (44, 22, "Déesse des flingues", "3250 RP", "22/03/2018");
+-- Result: query executed successfully. Took 0ms, 1 rows affected
+-- At line 45:
+INSERT INTO "Skins" VALUES (45, 23, "De l'odyssée", "1350 RP", "12/09/2018");
+-- Result: query executed successfully. Took 0ms, 1 rows affected
+-- At line 46:
+INSERT INTO "Skins" VALUES (46, 23, "Project", "1350 RP", "01/08/2019");
+-- Result: query executed successfully. Took 0ms, 1 rows affected
+-- At line 47:
+INSERT INTO "Skins" VALUES (47, 24, "True damage", "1350 RP", "10/11/2019");
+-- Result: query executed successfully. Took 0ms, 1 rows affected
+-- At line 48:
+INSERT INTO "Skins" VALUES (48, 24, "Chasseuse de tête", "975 RP", "06/06/2011");
+-- Result: query executed successfully. Took 0ms, 1 rows affected
+-- At line 49:
+INSERT INTO "Skins" VALUES (49, 25, "De l'assemblée", "1350 RP", "12/08/2021");
+-- Result: query executed successfully. Took 0ms, 1 rows affected
+-- At line 50:
+INSERT INTO "Skins" VALUES (50,25, "Sylvestre", "1350 RP", "08/2019");
+-- Result: query executed successfully. Took 0ms, 1 rows affected
+

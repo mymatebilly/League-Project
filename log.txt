@@ -1,0 +1,941 @@
+PRAGMA foreign_keys = '1';
+PRAGMA database_list;
+SELECT type,name,sql,tbl_name FROM "main".sqlite_master;
+PRAGMA encoding;
+PRAGMA collation_list;
+SAVEPOINT "db4s_edittable_1637078402742763563";
+SAVEPOINT "RESTOREPOINT";
+CREATE TABLE "Champions" (
+	"ID_ch"	INTEGER,
+	"Nom"	TEXT,
+	"Sexe"	TEXT,
+	"Armes"	TEXT,
+	"Prix_Ch"	INTEGER,
+	"Date_Ch"	TEXT,
+	"Role"	TEXT,
+	"Build.c"	TEXT,
+	"Melee/Range"	TEXT,
+	"Id_stat"	INTEGER
+);
+PRAGMA database_list;
+SELECT type,name,sql,tbl_name FROM "main".sqlite_master;
+PRAGMA collation_list;
+SAVEPOINT "db4s_edittable_1637078604384795556";
+CREATE TABLE "Skins" (
+	"ID_skin"	INTEGER NOT NULL,
+	"Nom_skin"	TEXT,
+	"Prix_skin"	INTEGER,
+	"Date_skin"	TEXT,
+	"ID_Ch"	INTEGER NOT NULL,
+	FOREIGN KEY("ID_Ch") REFERENCES "Champions",
+	PRIMARY KEY("ID_skin")
+);
+PRAGMA database_list;
+SELECT type,name,sql,tbl_name FROM "main".sqlite_master;
+PRAGMA foreign_keys;
+RELEASE "db4s_edittable_1637078402742763563";
+PRAGMA foreign_keys = '0';
+PRAGMA collation_list;
+SAVEPOINT "db4s_edittable_1637078857006412998";
+SELECT COUNT(*) FROM (SELECT COUNT("_rowid_") FROM "main"."Champions" WHERE coalesce(NULL,"ID_ch") IS NULL);
+SELECT COUNT("_rowid_") FROM "main"."Champions" WHERE coalesce(NULL,"ID_ch") IS NULL LIMIT 0, 49999;
+SELECT COUNT(*) FROM (SELECT COUNT("_rowid_") FROM "main"."Champions" WHERE coalesce(NULL,"Id_stat") IS NULL);
+SELECT COUNT("_rowid_") FROM "main"."Champions" WHERE coalesce(NULL,"Id_stat") IS NULL LIMIT 0, 49999;
+SAVEPOINT "db4s_renamecolumn_1637078872271279829";
+PRAGMA database_list;
+SELECT type,name,sql,tbl_name FROM "main".sqlite_master;
+SAVEPOINT "RESTOREPOINT";
+CREATE TABLE "sqlb_temp_table_1" (
+	"ID_ch"	INTEGER NOT NULL,
+	"Nom"	TEXT,
+	"Sexe"	TEXT,
+	"Armes"	TEXT,
+	"Prix_Ch"	INTEGER,
+	"Date_Ch"	TEXT,
+	"Role"	TEXT,
+	"Build.c"	TEXT,
+	"Melee/Range"	TEXT,
+	"Id_stat"	INTEGER NOT NULL,
+	PRIMARY KEY("ID_ch")
+);
+INSERT INTO "main"."sqlb_temp_table_1" ("Armes","Build.c","Date_Ch","ID_ch","Id_stat","Melee/Range","Nom","Prix_Ch","Role","Sexe") SELECT "Armes","Build.c","Date_Ch","ID_ch","Id_stat","Melee/Range","Nom","Prix_Ch","Role","Sexe" FROM "main"."Champions"
+PRAGMA defer_foreign_keys;
+PRAGMA defer_foreign_keys = '1';
+DROP TABLE "main"."Champions"
+ALTER TABLE "main"."sqlb_temp_table_1" RENAME TO "Champions"
+PRAGMA defer_foreign_keys = '0';
+RELEASE "db4s_renamecolumn_1637078872271279829";
+PRAGMA database_list;
+SELECT type,name,sql,tbl_name FROM "main".sqlite_master;
+SELECT type,name,sql,tbl_name FROM sqlite_temp_master;
+PRAGMA "main".foreign_key_check
+RELEASE "db4s_edittable_1637078857006412998";
+PRAGMA foreign_keys = '1';
+PRAGMA collation_list;
+SAVEPOINT "db4s_edittable_1637078875111995605";
+SAVEPOINT "RESTOREPOINT";
+CREATE TABLE "Statistiques" (
+	"ID_stat"	INTEGER NOT NULL,
+	"HP"	INTEGER,
+	"MP"	INTEGER,
+	"AD"	INTEGER,
+	"AP"	INTEGER,
+	"AS"	INTEGER,
+	"ARM"	INTEGER,
+	"MR"	INTEGER,
+	"Level"	INTEGER NOT NULL,
+	PRIMARY KEY("ID_stat")
+);
+PRAGMA database_list;
+SELECT type,name,sql,tbl_name FROM "main".sqlite_master;
+SELECT type,name,sql,tbl_name FROM sqlite_temp_master;
+PRAGMA collation_list;
+SAVEPOINT "db4s_edittable_1637078942985257907";
+CREATE TABLE "Lane" (
+	"ID_Ch"	INTEGER NOT NULL,
+	"Nom_Lane"	TEXT NOT NULL,
+	PRIMARY KEY("Nom_Lane")
+);
+PRAGMA database_list;
+SELECT type,name,sql,tbl_name FROM "main".sqlite_master;
+SELECT type,name,sql,tbl_name FROM sqlite_temp_master;
+PRAGMA foreign_keys;
+RELEASE "db4s_edittable_1637078875111995605";
+PRAGMA foreign_keys = '0';
+PRAGMA collation_list;
+SAVEPOINT "db4s_edittable_1637079011017466896";
+PRAGMA "main".foreign_key_check
+RELEASE "db4s_edittable_1637079011017466896";
+PRAGMA foreign_keys = '1';
+PRAGMA collation_list;
+SAVEPOINT "db4s_edittable_1637079602324892853";
+SAVEPOINT "RESTOREPOINT";
+CREATE TABLE "Partie" (
+	"ID_partie"	INTEGER NOT NULL,
+	"Nb_drake"	INTEGER,
+	"Nb_herald"	INTEGER,
+	"Winner"	TEXT,
+	"Loser"	TEXT,
+	"Nb_tourelles"	INTEGER,
+	PRIMARY KEY("ID_partie")
+);
+PRAGMA database_list;
+SELECT type,name,sql,tbl_name FROM "main".sqlite_master;
+SELECT type,name,sql,tbl_name FROM sqlite_temp_master;
+PRAGMA database_list;
+SELECT type,name,sql,tbl_name FROM "main".sqlite_master;
+SELECT type,name,sql,tbl_name FROM sqlite_temp_master;
+SELECT COUNT(*) FROM "main"."Champions"
+SELECT "_rowid_",* FROM "main"."Champions" LIMIT 0, 49999;
+PRAGMA auto_vacuum;
+PRAGMA automatic_index;
+PRAGMA checkpoint_fullfsync;
+PRAGMA foreign_keys;
+PRAGMA fullfsync;
+PRAGMA ignore_check_constraints;
+PRAGMA journal_mode;
+PRAGMA journal_size_limit;
+PRAGMA locking_mode;
+PRAGMA max_page_count;
+PRAGMA page_size;
+PRAGMA recursive_triggers;
+PRAGMA secure_delete;
+PRAGMA synchronous;
+PRAGMA temp_store;
+PRAGMA user_version;
+PRAGMA wal_autocheckpoint;
+SELECT 'x' NOT LIKE 'X';
+PRAGMA auto_vacuum;
+PRAGMA automatic_index;
+PRAGMA checkpoint_fullfsync;
+PRAGMA foreign_keys;
+PRAGMA fullfsync;
+PRAGMA ignore_check_constraints;
+PRAGMA journal_mode;
+PRAGMA journal_size_limit;
+PRAGMA locking_mode;
+PRAGMA max_page_count;
+PRAGMA page_size;
+PRAGMA recursive_triggers;
+PRAGMA secure_delete;
+PRAGMA synchronous;
+PRAGMA temp_store;
+PRAGMA user_version;
+PRAGMA wal_autocheckpoint;
+SELECT 'x' NOT LIKE 'X';
+PRAGMA database_list;
+SELECT type,name,sql,tbl_name FROM "main".sqlite_master;
+SELECT type,name,sql,tbl_name FROM sqlite_temp_master;
+SELECT COUNT(*) FROM "main"."Champions"
+SELECT "_rowid_",* FROM "main"."Champions" LIMIT 0, 49999;
+PRAGMA database_list;
+SELECT type,name,sql,tbl_name FROM "main".sqlite_master;
+SELECT type,name,sql,tbl_name FROM sqlite_temp_master;
+SELECT COUNT(*) FROM "main"."Champions"
+SELECT "_rowid_",* FROM "main"."Champions" LIMIT 0, 49999;
+PRAGMA auto_vacuum;
+PRAGMA automatic_index;
+PRAGMA checkpoint_fullfsync;
+PRAGMA foreign_keys;
+PRAGMA fullfsync;
+PRAGMA ignore_check_constraints;
+PRAGMA journal_mode;
+PRAGMA journal_size_limit;
+PRAGMA locking_mode;
+PRAGMA max_page_count;
+PRAGMA page_size;
+PRAGMA recursive_triggers;
+PRAGMA secure_delete;
+PRAGMA synchronous;
+PRAGMA temp_store;
+PRAGMA user_version;
+PRAGMA wal_autocheckpoint;
+SELECT 'x' NOT LIKE 'X';
+PRAGMA database_list;
+SELECT type,name,sql,tbl_name FROM "main".sqlite_master;
+SELECT type,name,sql,tbl_name FROM sqlite_temp_master;
+SELECT COUNT(*) FROM "main"."Champions"
+SELECT "_rowid_",* FROM "main"."Champions" LIMIT 0, 49999;
+PRAGMA database_list;
+SELECT type,name,sql,tbl_name FROM "main".sqlite_master;
+SELECT type,name,sql,tbl_name FROM sqlite_temp_master;
+SELECT COUNT(*) FROM "main"."Champions"
+SELECT "_rowid_",* FROM "main"."Champions" LIMIT 0, 49999;
+PRAGMA database_list;
+SELECT type,name,sql,tbl_name FROM "main".sqlite_master;
+SELECT type,name,sql,tbl_name FROM sqlite_temp_master;
+SELECT COUNT(*) FROM "main"."Lane"
+SELECT "_rowid_",* FROM "main"."Lane" LIMIT 0, 49999;
+PRAGMA database_list;
+SELECT type,name,sql,tbl_name FROM "main".sqlite_master;
+SELECT type,name,sql,tbl_name FROM sqlite_temp_master;
+SELECT COUNT(*) FROM "main"."Lane"
+SELECT "_rowid_",* FROM "main"."Lane" LIMIT 0, 49999;
+PRAGMA database_list;
+SELECT type,name,sql,tbl_name FROM "main".sqlite_master;
+SELECT type,name,sql,tbl_name FROM sqlite_temp_master;
+SELECT "_rowid_",* FROM "main"."Champions" LIMIT 0, 49999;
+SELECT COUNT(*) FROM "main"."Champions"
+SAVEPOINT "db4s_editindex_1637079927737289590";
+ROLLBACK TO SAVEPOINT "db4s_editindex_1637079927737289590";
+PRAGMA database_list;
+SELECT type,name,sql,tbl_name FROM "main".sqlite_master;
+SELECT type,name,sql,tbl_name FROM sqlite_temp_master;
+RELEASE "db4s_editindex_1637079927737289590";
+PRAGMA collation_list;
+SAVEPOINT "db4s_edittable_1637079953241822601";
+CREATE TABLE "Pick" (
+	"ID_joueur"	INTEGER,
+	"ID_Ch"	INTEGER,
+	"XP"	INTEGER,
+	"Essence"	INTEGER,
+	"Item"	INTEGER,
+	"ID_partie"	INTEGER,
+	FOREIGN KEY("ID_partie") REFERENCES "Partie"("ID_partie"),
+	FOREIGN KEY("ID_Ch") REFERENCES "Champions"("ID_ch"),
+	PRIMARY KEY("ID_joueur")
+);
+PRAGMA database_list;
+SELECT type,name,sql,tbl_name FROM "main".sqlite_master;
+SELECT type,name,sql,tbl_name FROM sqlite_temp_master;
+PRAGMA collation_list;
+SAVEPOINT "db4s_edittable_1637080201122578049";
+CREATE TABLE "Joueur" (
+	"Pseudo"	TEXT,
+	"ID_joueur"	INTEGER,
+	"Niveau"	INTEGER,
+	"Rang"	INTEGER,
+	"Victoires"	INTEGER,
+	"Défaites"	INTEGER,
+	PRIMARY KEY("ID_joueur")
+);
+PRAGMA database_list;
+SELECT type,name,sql,tbl_name FROM "main".sqlite_master;
+SELECT type,name,sql,tbl_name FROM sqlite_temp_master;
+PRAGMA collation_list;
+SAVEPOINT "db4s_edittable_1637080293629129868";
+ROLLBACK TO SAVEPOINT "db4s_edittable_1637080293629129868";
+PRAGMA database_list;
+SELECT type,name,sql,tbl_name FROM "main".sqlite_master;
+SELECT type,name,sql,tbl_name FROM sqlite_temp_master;
+RELEASE "db4s_edittable_1637080293629129868";
+PRAGMA foreign_keys;
+RELEASE "db4s_edittable_1637079602324892853";
+PRAGMA foreign_keys = '0';
+PRAGMA collation_list;
+SAVEPOINT "db4s_edittable_1637080354509245639";
+SAVEPOINT "db4s_renamecolumn_1637080360660682238";
+PRAGMA database_list;
+SELECT type,name,sql,tbl_name FROM "main".sqlite_master;
+SELECT type,name,sql,tbl_name FROM sqlite_temp_master;
+SAVEPOINT "RESTOREPOINT";
+CREATE TABLE "sqlb_temp_table_2" (
+	"ID_joueur"	INTEGER,
+	"ID_Ch"	INTEGER,
+	"XP"	INTEGER,
+	"Essence"	INTEGER,
+	"ID_partie"	INTEGER,
+	FOREIGN KEY("ID_partie") REFERENCES "Partie"("ID_partie"),
+	FOREIGN KEY("ID_Ch") REFERENCES "Champions"("ID_ch"),
+	PRIMARY KEY("ID_joueur")
+);
+INSERT INTO "main"."sqlb_temp_table_2" ("Essence","ID_Ch","ID_joueur","ID_partie","XP") SELECT "Essence","ID_Ch","ID_joueur","ID_partie","XP" FROM "main"."Pick"
+PRAGMA defer_foreign_keys;
+PRAGMA defer_foreign_keys = '1';
+DROP TABLE "main"."Pick"
+ALTER TABLE "main"."sqlb_temp_table_2" RENAME TO "Pick"
+PRAGMA defer_foreign_keys = '0';
+RELEASE "db4s_renamecolumn_1637080360660682238";
+PRAGMA database_list;
+SELECT type,name,sql,tbl_name FROM "main".sqlite_master;
+SELECT type,name,sql,tbl_name FROM sqlite_temp_master;
+PRAGMA "main".foreign_key_check
+RELEASE "db4s_edittable_1637080354509245639";
+PRAGMA foreign_keys = '1';
+PRAGMA collation_list;
+SAVEPOINT "db4s_edittable_1637080398765028672";
+SAVEPOINT "RESTOREPOINT";
+CREATE TABLE "Abilités" (
+	"ID_ch"	INTEGER,
+	"A"	TEXT,
+	"Z"	TEXT,
+	"E"	TEXT,
+	"R"	TEXT,
+	PRIMARY KEY("ID_ch")
+);
+PRAGMA database_list;
+SELECT type,name,sql,tbl_name FROM "main".sqlite_master;
+SELECT type,name,sql,tbl_name FROM sqlite_temp_master;
+PRAGMA foreign_keys;
+RELEASE "db4s_edittable_1637080398765028672";
+PRAGMA foreign_keys = '0';
+PRAGMA collation_list;
+SAVEPOINT "db4s_edittable_1637080500160543579";
+PRAGMA "main".foreign_key_check
+RELEASE "db4s_edittable_1637080500160543579";
+PRAGMA foreign_keys = '1';
+PRAGMA foreign_keys;
+PRAGMA foreign_keys = '0';
+PRAGMA collation_list;
+SAVEPOINT "db4s_edittable_1637080515814155160";
+ROLLBACK TO SAVEPOINT "db4s_edittable_1637080515814155160";
+PRAGMA database_list;
+SELECT type,name,sql,tbl_name FROM "main".sqlite_master;
+SELECT type,name,sql,tbl_name FROM sqlite_temp_master;
+RELEASE "db4s_edittable_1637080515814155160";
+PRAGMA "main".foreign_key_check
+PRAGMA foreign_keys = '1';
+PRAGMA foreign_keys;
+PRAGMA foreign_keys = '0';
+PRAGMA collation_list;
+SAVEPOINT "db4s_edittable_1637080523214149728";
+SAVEPOINT "db4s_renamecolumn_1637080532967513375";
+PRAGMA database_list;
+SELECT type,name,sql,tbl_name FROM "main".sqlite_master;
+SELECT type,name,sql,tbl_name FROM sqlite_temp_master;
+SAVEPOINT "RESTOREPOINT";
+CREATE TABLE "sqlb_temp_table_3" (
+	"ID_Ch"	INTEGER NOT NULL,
+	"Nom_Lane"	TEXT NOT NULL,
+	FOREIGN KEY("ID_Ch") REFERENCES "Champions"("ID_ch"),
+	PRIMARY KEY("Nom_Lane")
+);
+INSERT INTO "main"."sqlb_temp_table_3" ("ID_Ch","Nom_Lane") SELECT "ID_Ch","Nom_Lane" FROM "main"."Lane"
+PRAGMA defer_foreign_keys;
+PRAGMA defer_foreign_keys = '1';
+DROP TABLE "main"."Lane"
+ALTER TABLE "main"."sqlb_temp_table_3" RENAME TO "Lane"
+PRAGMA defer_foreign_keys = '0';
+RELEASE "db4s_renamecolumn_1637080532967513375";
+PRAGMA database_list;
+SELECT type,name,sql,tbl_name FROM "main".sqlite_master;
+SELECT type,name,sql,tbl_name FROM sqlite_temp_master;
+PRAGMA "main".foreign_key_check
+RELEASE "db4s_edittable_1637080523214149728";
+PRAGMA foreign_keys = '1';
+PRAGMA foreign_keys;
+PRAGMA foreign_keys = '0';
+PRAGMA collation_list;
+SAVEPOINT "db4s_edittable_1637080544111338389";
+SAVEPOINT "db4s_renamecolumn_1637080555725971810";
+PRAGMA database_list;
+SELECT type,name,sql,tbl_name FROM "main".sqlite_master;
+SELECT type,name,sql,tbl_name FROM sqlite_temp_master;
+SAVEPOINT "RESTOREPOINT";
+CREATE TABLE "sqlb_temp_table_4" (
+	"ID_ch"	INTEGER NOT NULL,
+	"Nom"	TEXT,
+	"Sexe"	TEXT,
+	"Armes"	TEXT,
+	"Prix_Ch"	INTEGER,
+	"Date_Ch"	TEXT,
+	"Role"	TEXT,
+	"Build.c"	TEXT,
+	"Melee/Range"	TEXT,
+	"Id_stat"	INTEGER NOT NULL,
+	PRIMARY KEY("ID_ch"),
+	FOREIGN KEY("Id_stat") REFERENCES "Statistiques"("ID_stat")
+);
+INSERT INTO "main"."sqlb_temp_table_4" ("Armes","Build.c","Date_Ch","ID_ch","Id_stat","Melee/Range","Nom","Prix_Ch","Role","Sexe") SELECT "Armes","Build.c","Date_Ch","ID_ch","Id_stat","Melee/Range","Nom","Prix_Ch","Role","Sexe" FROM "main"."Champions"
+PRAGMA defer_foreign_keys;
+PRAGMA defer_foreign_keys = '1';
+DROP TABLE "main"."Champions"
+ALTER TABLE "main"."sqlb_temp_table_4" RENAME TO "Champions"
+PRAGMA defer_foreign_keys = '0';
+RELEASE "db4s_renamecolumn_1637080555725971810";
+PRAGMA database_list;
+SELECT type,name,sql,tbl_name FROM "main".sqlite_master;
+SELECT type,name,sql,tbl_name FROM sqlite_temp_master;
+PRAGMA "main".foreign_key_check
+RELEASE "db4s_edittable_1637080544111338389";
+PRAGMA foreign_keys = '1';
+PRAGMA auto_vacuum;
+PRAGMA automatic_index;
+PRAGMA checkpoint_fullfsync;
+PRAGMA foreign_keys;
+PRAGMA fullfsync;
+PRAGMA ignore_check_constraints;
+PRAGMA journal_mode;
+PRAGMA journal_size_limit;
+PRAGMA locking_mode;
+PRAGMA max_page_count;
+PRAGMA page_size;
+PRAGMA recursive_triggers;
+PRAGMA secure_delete;
+PRAGMA synchronous;
+PRAGMA temp_store;
+PRAGMA user_version;
+PRAGMA wal_autocheckpoint;
+SELECT 'x' NOT LIKE 'X';
+PRAGMA database_list;
+SELECT type,name,sql,tbl_name FROM "main".sqlite_master;
+SELECT type,name,sql,tbl_name FROM sqlite_temp_master;
+SELECT COUNT(*) FROM "main"."Champions"
+SELECT "_rowid_",* FROM "main"."Champions" LIMIT 0, 49999;
+SELECT COUNT(*) FROM "main"."Champions"
+SELECT "_rowid_",* FROM "main"."Champions"  ORDER BY "ID_ch" ASC LIMIT 0, 49999;
+SELECT COUNT(*) FROM "main"."Champions"
+SELECT "_rowid_",* FROM "main"."Champions"  ORDER BY "ID_ch" DESC LIMIT 0, 49999;
+SELECT COUNT(*) FROM "main"."Champions"
+SELECT "_rowid_",* FROM "main"."Champions"  ORDER BY "ID_ch" ASC LIMIT 0, 49999;
+SELECT COUNT(*) FROM "main"."Champions" WHERE "ID_ch" LIKE '%1%' ESCAPE '\'
+SELECT "_rowid_",* FROM "main"."Champions" WHERE "ID_ch" LIKE '%1%' ESCAPE '\' ORDER BY "ID_ch" ASC LIMIT 0, 49999;
+SELECT COUNT(*) FROM "main"."Champions" WHERE "Nom" LIKE '%2%' ESCAPE '\' AND "ID_ch" LIKE '%1%' ESCAPE '\'
+SELECT "_rowid_",* FROM "main"."Champions" WHERE "Nom" LIKE '%2%' ESCAPE '\' AND "ID_ch" LIKE '%1%' ESCAPE '\' ORDER BY "ID_ch" ASC LIMIT 0, 49999;
+SELECT COUNT(*) FROM "main"."Champions" WHERE "ID_ch" LIKE '%1%' ESCAPE '\'
+SELECT "_rowid_",* FROM "main"."Champions" WHERE "ID_ch" LIKE '%1%' ESCAPE '\' ORDER BY "ID_ch" ASC LIMIT 0, 49999;
+SELECT COUNT(*) FROM "main"."Champions" WHERE "Nom" LIKE '%A%' ESCAPE '\' AND "ID_ch" LIKE '%1%' ESCAPE '\'
+SELECT "_rowid_",* FROM "main"."Champions" WHERE "Nom" LIKE '%A%' ESCAPE '\' AND "ID_ch" LIKE '%1%' ESCAPE '\' ORDER BY "ID_ch" ASC LIMIT 0, 49999;
+SELECT COUNT(*) FROM "main"."Champions" WHERE "Nom" LIKE '%Ai%' ESCAPE '\' AND "ID_ch" LIKE '%1%' ESCAPE '\'
+SELECT "_rowid_",* FROM "main"."Champions" WHERE "Nom" LIKE '%Ai%' ESCAPE '\' AND "ID_ch" LIKE '%1%' ESCAPE '\' ORDER BY "ID_ch" ASC LIMIT 0, 49999;
+SELECT COUNT(*) FROM "main"."Champions" WHERE "Nom" LIKE '%A%' ESCAPE '\' AND "ID_ch" LIKE '%1%' ESCAPE '\'
+SELECT "_rowid_",* FROM "main"."Champions" WHERE "Nom" LIKE '%A%' ESCAPE '\' AND "ID_ch" LIKE '%1%' ESCAPE '\' ORDER BY "ID_ch" ASC LIMIT 0, 49999;
+SELECT COUNT(*) FROM "main"."Champions" WHERE "Nom" LIKE '%Alis%' ESCAPE '\' AND "ID_ch" LIKE '%1%' ESCAPE '\'
+SELECT "_rowid_",* FROM "main"."Champions" WHERE "Nom" LIKE '%Alis%' ESCAPE '\' AND "ID_ch" LIKE '%1%' ESCAPE '\' ORDER BY "ID_ch" ASC LIMIT 0, 49999;
+SELECT COUNT(*) FROM "main"."Champions" WHERE "Nom" LIKE '%Alist%' ESCAPE '\' AND "ID_ch" LIKE '%1%' ESCAPE '\'
+SELECT "_rowid_",* FROM "main"."Champions" WHERE "Nom" LIKE '%Alist%' ESCAPE '\' AND "ID_ch" LIKE '%1%' ESCAPE '\' ORDER BY "ID_ch" ASC LIMIT 0, 49999;
+SELECT COUNT(*) FROM "main"."Champions" WHERE "Nom" LIKE '%Alista%' ESCAPE '\' AND "ID_ch" LIKE '%1%' ESCAPE '\'
+SELECT "_rowid_",* FROM "main"."Champions" WHERE "Nom" LIKE '%Alista%' ESCAPE '\' AND "ID_ch" LIKE '%1%' ESCAPE '\' ORDER BY "ID_ch" ASC LIMIT 0, 49999;
+SELECT COUNT(*) FROM "main"."Champions" WHERE "Nom" LIKE '%Alistar%' ESCAPE '\' AND "ID_ch" LIKE '%1%' ESCAPE '\'
+SELECT "_rowid_",* FROM "main"."Champions" WHERE "Nom" LIKE '%Alistar%' ESCAPE '\' AND "ID_ch" LIKE '%1%' ESCAPE '\' ORDER BY "ID_ch" ASC LIMIT 0, 49999;
+SELECT COUNT(*) FROM "main"."Champions" WHERE "ID_ch" LIKE '%1%' ESCAPE '\'
+SELECT "_rowid_",* FROM "main"."Champions" WHERE "ID_ch" LIKE '%1%' ESCAPE '\' ORDER BY "ID_ch" ASC LIMIT 0, 49999;
+SELECT "_rowid_",* FROM "main"."Champions"  ORDER BY "ID_ch" ASC LIMIT 0, 49999;
+SELECT COUNT(*) FROM "main"."Champions"
+PRAGMA auto_vacuum;
+PRAGMA automatic_index;
+PRAGMA checkpoint_fullfsync;
+PRAGMA foreign_keys;
+PRAGMA fullfsync;
+PRAGMA ignore_check_constraints;
+PRAGMA journal_mode;
+PRAGMA journal_size_limit;
+PRAGMA locking_mode;
+PRAGMA max_page_count;
+PRAGMA page_size;
+PRAGMA recursive_triggers;
+PRAGMA secure_delete;
+PRAGMA synchronous;
+PRAGMA temp_store;
+PRAGMA user_version;
+PRAGMA wal_autocheckpoint;
+SELECT 'x' NOT LIKE 'X';
+PRAGMA database_list;
+SELECT type,name,sql,tbl_name FROM "main".sqlite_master;
+SELECT type,name,sql,tbl_name FROM sqlite_temp_master;
+SELECT COUNT(*) FROM "main"."Champions"
+SELECT "_rowid_",* FROM "main"."Champions"  ORDER BY "ID_ch" ASC LIMIT 0, 49999;
+PRAGMA foreign_keys;
+PRAGMA foreign_keys = '0';
+PRAGMA collation_list;
+SAVEPOINT "db4s_edittable_1637080756694301603";
+ROLLBACK TO SAVEPOINT "db4s_edittable_1637080756694301603";
+PRAGMA database_list;
+SELECT type,name,sql,tbl_name FROM "main".sqlite_master;
+SELECT type,name,sql,tbl_name FROM sqlite_temp_master;
+RELEASE "db4s_edittable_1637080756694301603";
+PRAGMA "main".foreign_key_check
+PRAGMA foreign_keys = '1';
+PRAGMA database_list;
+SELECT type,name,sql,tbl_name FROM "main".sqlite_master;
+SELECT type,name,sql,tbl_name FROM sqlite_temp_master;
+SELECT COUNT(*) FROM "main"."Champions"
+SELECT "_rowid_",* FROM "main"."Champions"  ORDER BY "ID_ch" ASC LIMIT 0, 49999;
+PRAGMA foreign_keys;
+SELECT 'x' NOT LIKE 'X';
+PRAGMA temp_store;
+PRAGMA wal_autocheckpoint;
+PRAGMA synchronous;
+PRAGMA database_list;
+PRAGMA auto_vacuum;
+PRAGMA automatic_index;
+PRAGMA checkpoint_fullfsync;
+PRAGMA foreign_keys;
+PRAGMA fullfsync;
+PRAGMA ignore_check_constraints;
+PRAGMA journal_mode;
+PRAGMA journal_size_limit;
+PRAGMA locking_mode;
+PRAGMA max_page_count;
+PRAGMA page_size;
+PRAGMA recursive_triggers;
+PRAGMA secure_delete;
+PRAGMA synchronous;
+PRAGMA temp_store;
+PRAGMA user_version;
+PRAGMA wal_autocheckpoint;
+SELECT 'x' NOT LIKE 'X';
+PRAGMA database_list;
+SELECT type,name,sql,tbl_name FROM "main".sqlite_master;
+SELECT type,name,sql,tbl_name FROM sqlite_temp_master;
+SELECT COUNT(*) FROM "main"."Champions"
+SELECT "_rowid_",* FROM "main"."Champions"  ORDER BY "ID_ch" ASC LIMIT 0, 49999;
+PRAGMA database_list;
+SELECT type,name,sql,tbl_name FROM "main".sqlite_master;
+SELECT type,name,sql,tbl_name FROM sqlite_temp_master;
+SELECT COUNT(*) FROM "main"."Abilités"
+SELECT "_rowid_",* FROM "main"."Abilités" LIMIT 0, 49999;
+PRAGMA database_list;
+SELECT type,name,sql,tbl_name FROM "main".sqlite_master;
+SELECT type,name,sql,tbl_name FROM sqlite_temp_master;
+SELECT COUNT(*) FROM "main"."Champions"
+SELECT "_rowid_",* FROM "main"."Champions"  ORDER BY "ID_ch" ASC LIMIT 0, 49999;
+PRAGMA auto_vacuum;
+PRAGMA automatic_index;
+PRAGMA checkpoint_fullfsync;
+PRAGMA foreign_keys;
+PRAGMA fullfsync;
+PRAGMA ignore_check_constraints;
+PRAGMA journal_mode;
+PRAGMA journal_size_limit;
+PRAGMA locking_mode;
+PRAGMA max_page_count;
+PRAGMA page_size;
+PRAGMA recursive_triggers;
+PRAGMA secure_delete;
+PRAGMA synchronous;
+PRAGMA temp_store;
+PRAGMA user_version;
+PRAGMA wal_autocheckpoint;
+SELECT 'x' NOT LIKE 'X';
+PRAGMA database_list;
+SELECT type,name,sql,tbl_name FROM "main".sqlite_master;
+SELECT type,name,sql,tbl_name FROM sqlite_temp_master;
+SELECT COUNT(*) FROM "main"."Champions"
+SELECT "_rowid_",* FROM "main"."Champions"  ORDER BY "ID_ch" ASC LIMIT 0, 49999;
+PRAGMA database_list;
+SELECT type,name,sql,tbl_name FROM "main".sqlite_master;
+SELECT type,name,sql,tbl_name FROM sqlite_temp_master;
+SELECT COUNT(*) FROM "main"."Champions"
+SELECT "_rowid_",* FROM "main"."Champions"  ORDER BY "ID_ch" ASC LIMIT 0, 49999;
+PRAGMA auto_vacuum;
+PRAGMA automatic_index;
+PRAGMA checkpoint_fullfsync;
+PRAGMA foreign_keys;
+PRAGMA fullfsync;
+PRAGMA ignore_check_constraints;
+PRAGMA journal_mode;
+PRAGMA journal_size_limit;
+PRAGMA locking_mode;
+PRAGMA max_page_count;
+PRAGMA page_size;
+PRAGMA recursive_triggers;
+PRAGMA secure_delete;
+PRAGMA synchronous;
+PRAGMA temp_store;
+PRAGMA user_version;
+PRAGMA wal_autocheckpoint;
+SELECT 'x' NOT LIKE 'X';
+PRAGMA auto_vacuum;
+PRAGMA automatic_index;
+PRAGMA checkpoint_fullfsync;
+PRAGMA foreign_keys;
+PRAGMA fullfsync;
+PRAGMA ignore_check_constraints;
+PRAGMA journal_mode;
+PRAGMA journal_size_limit;
+PRAGMA locking_mode;
+PRAGMA max_page_count;
+PRAGMA page_size;
+PRAGMA recursive_triggers;
+PRAGMA secure_delete;
+PRAGMA synchronous;
+PRAGMA temp_store;
+PRAGMA user_version;
+PRAGMA wal_autocheckpoint;
+SELECT 'x' NOT LIKE 'X';
+PRAGMA database_list;
+SELECT type,name,sql,tbl_name FROM "main".sqlite_master;
+SELECT type,name,sql,tbl_name FROM sqlite_temp_master;
+SELECT COUNT(*) FROM "main"."Champions"
+SELECT "_rowid_",* FROM "main"."Champions"  ORDER BY "ID_ch" ASC LIMIT 0, 49999;
+PRAGMA foreign_keys;
+PRAGMA foreign_keys = '0';
+PRAGMA collation_list;
+SAVEPOINT "db4s_edittable_1637081154262845900";
+SAVEPOINT "db4s_renamecolumn_1637081296058518355";
+SAVEPOINT "RESTOREPOINT";
+ALTER TABLE "main"."Champions" ADD COLUMN 	"Item Conseillé"	TEXT
+PRAGMA database_list;
+SELECT type,name,sql,tbl_name FROM "main".sqlite_master;
+SELECT type,name,sql,tbl_name FROM sqlite_temp_master;
+CREATE TABLE "sqlb_temp_table_5" (
+	"ID_ch"	INTEGER NOT NULL,
+	"Nom"	TEXT,
+	"Sexe"	TEXT,
+	"Armes"	TEXT,
+	"Prix_Ch"	INTEGER,
+	"Date_Ch"	TEXT,
+	"Role"	TEXT,
+	"Item Conseillé"	TEXT,
+	"Build.c"	TEXT,
+	"Melee/Range"	TEXT,
+	"Id_stat"	INTEGER NOT NULL,
+	PRIMARY KEY("ID_ch"),
+	FOREIGN KEY("Id_stat") REFERENCES "Statistiques"("ID_stat")
+);
+INSERT INTO "main"."sqlb_temp_table_5" ("Armes","Build.c","Date_Ch","ID_ch","Id_stat","Melee/Range","Nom","Prix_Ch","Role","Sexe") SELECT "Armes","Build.c","Date_Ch","ID_ch","Id_stat","Melee/Range","Nom","Prix_Ch","Role","Sexe" FROM "main"."Champions"
+PRAGMA defer_foreign_keys;
+PRAGMA defer_foreign_keys = '1';
+DROP TABLE "main"."Champions"
+ALTER TABLE "main"."sqlb_temp_table_5" RENAME TO "Champions"
+PRAGMA defer_foreign_keys = '0';
+RELEASE "db4s_renamecolumn_1637081296058518355";
+PRAGMA database_list;
+SELECT type,name,sql,tbl_name FROM "main".sqlite_master;
+SELECT type,name,sql,tbl_name FROM sqlite_temp_master;
+PRAGMA "main".foreign_key_check
+RELEASE "db4s_edittable_1637081154262845900";
+PRAGMA foreign_keys = '1';
+PRAGMA auto_vacuum;
+PRAGMA automatic_index;
+PRAGMA checkpoint_fullfsync;
+PRAGMA foreign_keys;
+PRAGMA fullfsync;
+PRAGMA ignore_check_constraints;
+PRAGMA journal_mode;
+PRAGMA journal_size_limit;
+PRAGMA locking_mode;
+PRAGMA max_page_count;
+PRAGMA page_size;
+PRAGMA recursive_triggers;
+PRAGMA secure_delete;
+PRAGMA synchronous;
+PRAGMA temp_store;
+PRAGMA user_version;
+PRAGMA wal_autocheckpoint;
+SELECT 'x' NOT LIKE 'X';
+SAVEPOINT "RESTOREPOINT";
+ROLLBACK TO SAVEPOINT "RESTOREPOINT";
+PRAGMA database_list;
+SELECT type,name,sql,tbl_name FROM "main".sqlite_master;
+SELECT type,name,sql,tbl_name FROM sqlite_temp_master;
+RELEASE "RESTOREPOINT";
+PRAGMA foreign_keys;
+PRAGMA foreign_keys = '0';
+PRAGMA collation_list;
+SAVEPOINT "db4s_edittable_1637081449655876884";
+SAVEPOINT "db4s_renamecolumn_1637081463376659639";
+PRAGMA database_list;
+SELECT type,name,sql,tbl_name FROM "main".sqlite_master;
+SELECT type,name,sql,tbl_name FROM sqlite_temp_master;
+SAVEPOINT "RESTOREPOINT";
+CREATE TABLE "sqlb_temp_table_6" (
+	"ID_ch"	INTEGER,
+	"Nom"	TEXT,
+	"Sexe"	TEXT,
+	"Armes"	TEXT,
+	"Prix_Ch"	INTEGER,
+	"Date_Ch"	TEXT,
+	"Role"	TEXT,
+	"Item Conseillé"	TEXT,
+	"Build.c"	TEXT,
+	"Melee/Range"	TEXT,
+	"Id_stat"	INTEGER,
+	FOREIGN KEY("Id_stat") REFERENCES "Statistiques"("ID_stat")
+);
+INSERT INTO "main"."sqlb_temp_table_6" ("Armes","Build.c","Date_Ch","ID_ch","Id_stat","Item Conseillé","Melee/Range","Nom","Prix_Ch","Role","Sexe") SELECT "Armes","Build.c","Date_Ch","ID_ch","Id_stat","Item Conseillé","Melee/Range","Nom","Prix_Ch","Role","Sexe" FROM "main"."Champions"
+PRAGMA defer_foreign_keys;
+PRAGMA defer_foreign_keys = '1';
+DROP TABLE "main"."Champions"
+ALTER TABLE "main"."sqlb_temp_table_6" RENAME TO "Champions"
+PRAGMA defer_foreign_keys = '0';
+RELEASE "db4s_renamecolumn_1637081463376659639";
+PRAGMA database_list;
+SELECT type,name,sql,tbl_name FROM "main".sqlite_master;
+SELECT type,name,sql,tbl_name FROM sqlite_temp_master;
+PRAGMA "main".foreign_key_check
+RELEASE "db4s_edittable_1637081449655876884";
+PRAGMA foreign_keys = '1';
+PRAGMA database_list;
+SELECT type,name,sql,tbl_name FROM "main".sqlite_master;
+SELECT type,name,sql,tbl_name FROM sqlite_temp_master;
+SELECT COUNT(*) FROM "main"."Champions"
+SELECT "_rowid_",* FROM "main"."Champions"  ORDER BY "ID_ch" ASC LIMIT 0, 49999;
+PRAGMA auto_vacuum;
+PRAGMA automatic_index;
+PRAGMA checkpoint_fullfsync;
+PRAGMA foreign_keys;
+PRAGMA fullfsync;
+PRAGMA ignore_check_constraints;
+PRAGMA journal_mode;
+PRAGMA journal_size_limit;
+PRAGMA locking_mode;
+PRAGMA max_page_count;
+PRAGMA page_size;
+PRAGMA recursive_triggers;
+PRAGMA secure_delete;
+PRAGMA synchronous;
+PRAGMA temp_store;
+PRAGMA user_version;
+PRAGMA wal_autocheckpoint;
+SELECT 'x' NOT LIKE 'X';
+SAVEPOINT "RESTOREPOINT";
+ROLLBACK TO SAVEPOINT "RESTOREPOINT";
+PRAGMA database_list;
+SELECT type,name,sql,tbl_name FROM "main".sqlite_master;
+SELECT type,name,sql,tbl_name FROM sqlite_temp_master;
+RELEASE "RESTOREPOINT";
+PRAGMA auto_vacuum;
+PRAGMA automatic_index;
+PRAGMA checkpoint_fullfsync;
+PRAGMA foreign_keys;
+PRAGMA fullfsync;
+PRAGMA ignore_check_constraints;
+PRAGMA journal_mode;
+PRAGMA journal_size_limit;
+PRAGMA locking_mode;
+PRAGMA max_page_count;
+PRAGMA page_size;
+PRAGMA recursive_triggers;
+PRAGMA secure_delete;
+PRAGMA synchronous;
+PRAGMA temp_store;
+PRAGMA user_version;
+PRAGMA wal_autocheckpoint;
+SELECT 'x' NOT LIKE 'X';
+PRAGMA database_list;
+SELECT type,name,sql,tbl_name FROM "main".sqlite_master;
+SELECT type,name,sql,tbl_name FROM sqlite_temp_master;
+SELECT COUNT(*) FROM "main"."Champions"
+SELECT "_rowid_",* FROM "main"."Champions"  ORDER BY "ID_ch" ASC LIMIT 0, 49999;
+PRAGMA foreign_keys;
+PRAGMA foreign_keys = '0';
+PRAGMA collation_list;
+SAVEPOINT "db4s_edittable_1637081478578022221";
+ROLLBACK TO SAVEPOINT "db4s_edittable_1637081478578022221";
+PRAGMA database_list;
+SELECT type,name,sql,tbl_name FROM "main".sqlite_master;
+SELECT type,name,sql,tbl_name FROM sqlite_temp_master;
+RELEASE "db4s_edittable_1637081478578022221";
+PRAGMA "main".foreign_key_check
+PRAGMA foreign_keys = '1';
+PRAGMA foreign_keys;
+PRAGMA foreign_keys = '0';
+PRAGMA collation_list;
+SAVEPOINT "db4s_edittable_1637081483496032700";
+SAVEPOINT "db4s_renamecolumn_1637081494029754754";
+PRAGMA database_list;
+SELECT type,name,sql,tbl_name FROM "main".sqlite_master;
+SELECT type,name,sql,tbl_name FROM sqlite_temp_master;
+SAVEPOINT "RESTOREPOINT";
+CREATE TABLE "sqlb_temp_table_7" (
+	"ID_ch"	INTEGER,
+	"Nom"	TEXT,
+	"Sexe"	TEXT,
+	"Armes"	TEXT,
+	"Prix_Ch"	INTEGER,
+	"Date_Ch"	TEXT,
+	"Role"	TEXT,
+	"Item Conseillé"	TEXT,
+	"Build.c"	TEXT,
+	"Melee/Range"	INTEGER,
+	"Id_stat"	INTEGER
+);
+INSERT INTO "main"."sqlb_temp_table_7" ("Armes","Build.c","Date_Ch","ID_ch","Id_stat","Item Conseillé","Melee/Range","Nom","Prix_Ch","Role","Sexe") SELECT "Armes","Build.c","Date_Ch","ID_ch","Id_stat","Item Conseillé","Melee/Range","Nom","Prix_Ch","Role","Sexe" FROM "main"."Champions"
+PRAGMA defer_foreign_keys;
+PRAGMA defer_foreign_keys = '1';
+DROP TABLE "main"."Champions"
+ALTER TABLE "main"."sqlb_temp_table_7" RENAME TO "Champions"
+PRAGMA defer_foreign_keys = '0';
+RELEASE "db4s_renamecolumn_1637081494029754754";
+PRAGMA database_list;
+SELECT type,name,sql,tbl_name FROM "main".sqlite_master;
+SELECT type,name,sql,tbl_name FROM sqlite_temp_master;
+PRAGMA "main".foreign_key_check
+RELEASE "db4s_edittable_1637081483496032700";
+PRAGMA foreign_keys = '1';
+PRAGMA foreign_keys;
+SELECT 'x' NOT LIKE 'X';
+PRAGMA temp_store;
+PRAGMA wal_autocheckpoint;
+PRAGMA synchronous;
+PRAGMA database_list;
+PRAGMA database_list;
+SELECT type,name,sql,tbl_name FROM "main".sqlite_master;
+SELECT type,name,sql,tbl_name FROM sqlite_temp_master;
+SELECT COUNT(*) FROM "main"."Champions"
+SELECT "_rowid_",* FROM "main"."Champions"  ORDER BY "ID_ch" ASC LIMIT 0, 49999;
+PRAGMA auto_vacuum;
+PRAGMA automatic_index;
+PRAGMA checkpoint_fullfsync;
+PRAGMA foreign_keys;
+PRAGMA fullfsync;
+PRAGMA ignore_check_constraints;
+PRAGMA journal_mode;
+PRAGMA journal_size_limit;
+PRAGMA locking_mode;
+PRAGMA max_page_count;
+PRAGMA page_size;
+PRAGMA recursive_triggers;
+PRAGMA secure_delete;
+PRAGMA synchronous;
+PRAGMA temp_store;
+PRAGMA user_version;
+PRAGMA wal_autocheckpoint;
+SELECT 'x' NOT LIKE 'X';
+SAVEPOINT "RESTOREPOINT";
+PRAGMA database_list;
+SELECT type,name,sql,tbl_name FROM "main".sqlite_master;
+SELECT type,name,sql,tbl_name FROM sqlite_temp_master;
+SELECT COUNT(*) FROM "main"."Champions"
+SELECT "_rowid_",* FROM "main"."Champions"  ORDER BY "ID_ch" ASC LIMIT 0, 49999;
+PRAGMA auto_vacuum;
+PRAGMA automatic_index;
+PRAGMA checkpoint_fullfsync;
+PRAGMA foreign_keys;
+PRAGMA fullfsync;
+PRAGMA ignore_check_constraints;
+PRAGMA journal_mode;
+PRAGMA journal_size_limit;
+PRAGMA locking_mode;
+PRAGMA max_page_count;
+PRAGMA page_size;
+PRAGMA recursive_triggers;
+PRAGMA secure_delete;
+PRAGMA synchronous;
+PRAGMA temp_store;
+PRAGMA user_version;
+PRAGMA wal_autocheckpoint;
+SELECT 'x' NOT LIKE 'X';
+PRAGMA database_list;
+SELECT type,name,sql,tbl_name FROM "main".sqlite_master;
+SELECT type,name,sql,tbl_name FROM sqlite_temp_master;
+SELECT COUNT(*) FROM "main"."Champions"
+SELECT "_rowid_",* FROM "main"."Champions"  ORDER BY "ID_ch" ASC LIMIT 0, 49999;
+PRAGMA foreign_keys;
+SELECT 'x' NOT LIKE 'X';
+PRAGMA temp_store;
+PRAGMA wal_autocheckpoint;
+PRAGMA synchronous;
+PRAGMA database_list;
+PRAGMA database_list;
+SELECT type,name,sql,tbl_name FROM "main".sqlite_master;
+SELECT type,name,sql,tbl_name FROM sqlite_temp_master;
+SELECT COUNT(*) FROM "main"."Champions"
+SELECT "_rowid_",* FROM "main"."Champions"  ORDER BY "ID_ch" ASC LIMIT 0, 49999;
+PRAGMA database_list;
+SELECT type,name,sql,tbl_name FROM "main".sqlite_master;
+SELECT type,name,sql,tbl_name FROM sqlite_temp_master;
+SELECT COUNT(*) FROM "main"."Champions"
+SELECT "_rowid_",* FROM "main"."Champions"  ORDER BY "ID_ch" ASC LIMIT 0, 49999;
+PRAGMA foreign_keys;
+RELEASE "RESTOREPOINT";
+PRAGMA foreign_keys = '0';
+PRAGMA collation_list;
+SAVEPOINT "db4s_edittable_1637082894521497547";
+SAVEPOINT "db4s_renamecolumn_1637082899238145014";
+PRAGMA database_list;
+SELECT type,name,sql,tbl_name FROM "main".sqlite_master;
+SELECT type,name,sql,tbl_name FROM sqlite_temp_master;
+SAVEPOINT "RESTOREPOINT";
+CREATE TABLE "sqlb_temp_table_8" (
+	"ID_skin"	INTEGER NOT NULL,
+	"Nom_skin"	TEXT,
+	"Prix_skin"	TEXT,
+	"Date_skin"	TEXT,
+	"ID_Ch"	INTEGER NOT NULL,
+	PRIMARY KEY("ID_skin"),
+	FOREIGN KEY("ID_Ch") REFERENCES "Champions"
+);
+INSERT INTO "main"."sqlb_temp_table_8" ("Date_skin","ID_Ch","ID_skin","Nom_skin","Prix_skin") SELECT "Date_skin","ID_Ch","ID_skin","Nom_skin","Prix_skin" FROM "main"."Skins"
+PRAGMA defer_foreign_keys;
+PRAGMA defer_foreign_keys = '1';
+DROP TABLE "main"."Skins"
+ALTER TABLE "main"."sqlb_temp_table_8" RENAME TO "Skins"
+PRAGMA defer_foreign_keys = '0';
+RELEASE "db4s_renamecolumn_1637082899238145014";
+PRAGMA database_list;
+SELECT type,name,sql,tbl_name FROM "main".sqlite_master;
+SELECT type,name,sql,tbl_name FROM sqlite_temp_master;
+PRAGMA "main".foreign_key_check
+RELEASE "db4s_edittable_1637082894521497547";
+PRAGMA foreign_keys = '1';
+SAVEPOINT "RESTOREPOINT";
+ROLLBACK TO SAVEPOINT "RESTOREPOINT";
+PRAGMA database_list;
+SELECT type,name,sql,tbl_name FROM "main".sqlite_master;
+SELECT type,name,sql,tbl_name FROM sqlite_temp_master;
+RELEASE "RESTOREPOINT";
+PRAGMA foreign_keys;
+PRAGMA foreign_keys = '0';
+PRAGMA collation_list;
+SAVEPOINT "db4s_edittable_1637084431333344053";
+SAVEPOINT "db4s_renamecolumn_1637084443288010754";
+PRAGMA database_list;
+SELECT type,name,sql,tbl_name FROM "main".sqlite_master;
+SELECT type,name,sql,tbl_name FROM sqlite_temp_master;
+SAVEPOINT "RESTOREPOINT";
+CREATE TABLE "sqlb_temp_table_9" (
+	"ID_skin"	INTEGER,
+	"Nom_skin"	TEXT,
+	"Prix_skin"	TEXT,
+	"Date_skin"	TEXT,
+	"ID_Ch"	INTEGER COLLATE UTF16CI
+);
+INSERT INTO "main"."sqlb_temp_table_9" ("Date_skin","ID_Ch","ID_skin","Nom_skin","Prix_skin") SELECT "Date_skin","ID_Ch","ID_skin","Nom_skin","Prix_skin" FROM "main"."Skins"
+PRAGMA defer_foreign_keys;
+PRAGMA defer_foreign_keys = '1';
+DROP TABLE "main"."Skins"
+ALTER TABLE "main"."sqlb_temp_table_9" RENAME TO "Skins"
+PRAGMA defer_foreign_keys = '0';
+RELEASE "db4s_renamecolumn_1637084443288010754";
+PRAGMA database_list;
+SELECT type,name,sql,tbl_name FROM "main".sqlite_master;
+SELECT type,name,sql,tbl_name FROM sqlite_temp_master;
+PRAGMA "main".foreign_key_check
+RELEASE "db4s_edittable_1637084431333344053";
+PRAGMA foreign_keys = '1';
+SAVEPOINT "RESTOREPOINT";
+PRAGMA database_list;
+SELECT type,name,sql,tbl_name FROM "main".sqlite_master;
+SELECT type,name,sql,tbl_name FROM sqlite_temp_master;
+SELECT COUNT(*) FROM "main"."Champions"
+SELECT "_rowid_",* FROM "main"."Champions"  ORDER BY "ID_ch" ASC LIMIT 0, 49999;
+PRAGMA database_list;
+SELECT type,name,sql,tbl_name FROM "main".sqlite_master;
+SELECT type,name,sql,tbl_name FROM sqlite_temp_master;
+SELECT COUNT(*) FROM "main"."Skins"
+SELECT "_rowid_",* FROM "main"."Skins" LIMIT 0, 49999;
+RELEASE "RESTOREPOINT";
+
