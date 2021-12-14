@@ -9,26 +9,26 @@ cur = conn.cursor()
 #Table Partie
 
 #Nb_drake = [0 ; 6]
-drake = str(random.randint(0,6))
+drake = random.randint(0,6)
 
 #Nb_herald = [0 ; 2]
-herald = str(random.randint(0,2))
+herald = random.randint(0,2)
 
 #Nb_nashor = [0 ; 2]
-nashor = str(random.randint(0,2))
+nashor = random.randint(0,2)
 
 #Gagnant = [0 ; 2]
-gagnant = str(random.randint(0,2))
+gagnant = random.randint(0,2)
 
 #Tourelles = [0 ; 22]
-tourelles = str(random.randint(0,22))
+tourelles = random.randint(0,22)
 
 #Inhibiteur = [0 ; 6]
-inhibiteur = str(random.randint(0,6))
+inhibiteur = random.randint(0,6)
 
 #Ajout de valeurs dans la BD
 
-Requete= "INSERT INTO Partie (Nb_drake, Nb_herald, Nb_nashor, Gagnant, Nb_tourelles, Inhibiteur) VALUES ("+drake+","+herald+","+nashor+","+gagnant+","+tourelles+","+inhibiteur+");"
+Requete= "INSERT INTO Partie (Nb_drake, Nb_herald, Nb_nashor, Gagnant, Nb_tourelles, Inhibiteur) VALUES ("+str(drake)+","+str(herald)+","+str(nashor)+","+str(gagnant)+","+str(tourelles)+","+str(inhibiteur)+");"
 cur.execute(Requete)
 conn.commit()
 
@@ -48,37 +48,34 @@ for i in range(10) :
     champion = random.randint(1,25)
     
     #skin 
-    Req = "SELECT ID_skin FROM Skins WHERE ID_ch = ",+champion+";"
+    Req = "SELECT ID_skin FROM Skins WHERE ID_ch = "+str(champion)+";"
     cur.execute(Requete)
     skin = random.randint(0,1)
-    if skin == 1 :
-        mylist = cur.fetchall()
-        a = random.shuffle(mylist)
-        skin = a[1]
+    
         
     #KDA = (0 , 20)(0 , 20)(0 , 20)
     tmp = (random.randint(0,20), random.randint(0,20), random.randint(0,20))
-    KDA = str(str(tmp[0])+str(tmp[1])+str(tmp[2]))
+    KDA = str(str(tmp[0])+"/"+str(tmp[1])+"/"+str(tmp[2]))
     
     #Item
     item = random.randint(0,20)
     
     #Ajout des valeurs dans la BD
-    Requete = "INSERT INTO Resume_partie (ID_joueur, ID_ch, ID_skin, KDA, ID_item) VALUES("+pseudo+","+champion+","+skin+","+KDA+","+item+")"
+    Requete = "INSERT INTO Resume_partie (ID_joueur, ID_ch, ID_skin, KDA, ID_item) VALUES("+str(pseudo)+","+str(champion)+","+str(skin)+","+KDA+","+str(item)+")"
     cur.execute(Requete)
     conn.commit()
 
 for i in range (5) :
     equipe = 1
     
-    Requete = "INSERT INTO Resume_partie (Equipe) VALUES("+equipe+")"
+    Requete = "INSERT INTO Resume_partie (Equipe) VALUES("+str(equipe)+")"
     cur.execute(Requete)
     conn.commit()
     
 for i in range (5) :
     equipe = 2
     
-    Requete = "INSERT INTO Resume_partie (Equipe) VALUES("+equipe+");"
+    Requete = "INSERT INTO Resume_partie (Equipe) VALUES("+str(equipe)+");"
     cur.execute(Requete)
     conn.commit()
     
@@ -110,14 +107,14 @@ print( """<!doctype html>
 		</body>
 	</html>""" )
     
-for Pseudo, Niveau, Rang, XP, LP, Victoires, Defaites in cur.fetchall() :
+for Pseudo, Niveau, Rang, Victoires, Defaites, XP, LP in cur.fetchall() :
     print(     """<tr>
                     <td>""", Pseudo , """</td>
                     <td>""", Niveau , """</td>
                     <td>""", Rang , """</td>
-                    <td>""", XP , """</td>
-                    <td>""", LP , """</td>
                     <td>""", Victoires , """</td>
+                    <td>""", Defaites , """</td>
+                    <td>""", XP , """</td>
                     <td>""", Defaites , """</td>
                     </tr>""")
 print( """</table>
@@ -150,9 +147,8 @@ print( """<!doctype html>
 		</body>
 	</html>""" )
     
-for Equipe, ID_partie, Nb_drake, Nb_herald, Nb_nashor, Gagnant, Perdant, Nb_tourelles, Inhibiteur in cur.fetchall() :
+for ID_partie, Nb_drake, Nb_herald, Nb_nashor, Gagnant, Perdant, Nb_tourelles, Inhibiteur in cur.fetchall() :
     print(     """<tr>
-                    <td>""", Equipe , """</td>
                     <td>""", ID_partie , """</td>
                     <td>""", Nb_drake , """</td>
                     <td>""", Nb_herald , """</td>
@@ -200,13 +196,12 @@ print( """<!doctype html>
 		</body>
 	</html>""" )
     
-for Pseudo, ID_partie, Nom, Nom_skin, Equipe, KDA, Nom_item in cur.fetchall() :
+for Pseudo, Nom, Nom_skin, Equipe, KDA, Nom_item in cur.fetchall() :
     print(     """<tr>
                     <td>""", Pseudo , """</td>
-					<td>""", ID_partie , """</td>
                     <td>""", Nom , """</td>
                     <td>""", Nom_skin , """</td>
-                    <td>""", Equipe , """</td>*
+                    <td>""", Equipe , """</td>
                     <td>""", KDA , """</td>
                     <td>""", Nom_item , """</td>
                     </tr>""")
