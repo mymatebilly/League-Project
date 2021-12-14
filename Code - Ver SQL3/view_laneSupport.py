@@ -1,12 +1,16 @@
+#!.usr/bin/env python3
 import sqlite3
 
-Requete = "SELECT Nom, Nom_lane FROM Champion, Lanes, Jouabilite WHERE Champion*id_ch = Jouabilite*id_ch AND Jouabilité*id_ch AND Jouabilite*No_lane = Lanes*No_lane AND Nom_lane = Support"
+Requete = """SELECT Nom, Nom_lane FROM Champions, Lane, Jouabilite WHERE Champions.ID_ch = Jouabilite.ID_ch AND Jouabilite.ID_ch AND Jouabilite.No_lane = Lane.No_lane AND Nom_lane = "Support";"""
 
 conn = sqlite3.connect('League Project')
 
 cur = conn.cursor()
 
 cur.execute(Requete)
+
+print("Content-type: text/html")
+print("\n\n")
 
 print( """<!doctype html>
 	<html lang="en">

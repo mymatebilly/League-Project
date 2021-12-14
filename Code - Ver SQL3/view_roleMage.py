@@ -1,12 +1,16 @@
+#!/usr/bin/env python3
 import sqlite3
 
-Requete = "SELECT Nom, Role FROM Champion WHERE Role=Mage"
+Requete = """SELECT Nom, Role FROM Champions WHERE Role="Mage";"""
 
 conn = sqlite3.connect('League Project')
 
 cur = conn.cursor()
 
 cur.execute(Requete)
+
+print("Content-type: text/html")
+print("\n\n")
 
 print( """<!doctype html>
     <html lang="en">

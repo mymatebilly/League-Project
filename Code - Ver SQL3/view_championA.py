@@ -1,15 +1,19 @@
 #!/usr/bin/env python3
 import sqlite3
 
-Requete = """Select "Nom",	"Sexe",
-	"Arme",
+Requete = """Select "Nom",
 	"Prix",
 	"Date_ch",
-	"Role",
+	"Nom_item",
 	"A"	,
 	"Z",
 	"E"	,
-	"R"	FROM Champions,Boutique_Items, Statistiques
+	"R",
+	"HP",
+	"AD",
+	"MP",
+	"MR",
+	"Rng"	FROM Champions,Boutique_Items, Statistiques
 	where 
 	Boutique_Items.ID_item = Champions.ID_item
 	AND Statistiques.ID_stat = Champions.ID_ch
@@ -45,10 +49,8 @@ print( """<!doctype html>
 					<td>E</td>
 					<td>R</td>
 					<td>HP</td>
-					<td>Mana</td>
 					<td>AD</td>
-					<td>AS</td>
-					<td>AR</td>
+					<td>Mana</td>
 					<td>MR</td>
 					<td>Range</td>
 				</tr>
@@ -60,7 +62,7 @@ print( """<!doctype html>
 		</body>
 	</html>""" )
     
-for Nom, Prix_ch, Date_ch, Nom_item, A, Z, E, R, HP, Mana, AD, AS, AR, MR, Range in cur.fetchall() :
+for Nom, Prix_ch, Date_ch, Nom_item, A, Z, E, R, HP, AD, Mana, MR, Range in cur.fetchall() :
     print(     """<tr>
                     <td>""", Nom , """</td>
                     <td>""", Prix_ch , """</td>
@@ -71,13 +73,15 @@ for Nom, Prix_ch, Date_ch, Nom_item, A, Z, E, R, HP, Mana, AD, AS, AR, MR, Range
                     <td>""", E , """</td>
                     <td>""", R , """</td>
                     <td>""", HP , """</td>
-                    <td>""", Mana , """</td>
                     <td>""", AD , """</td>
-                    <td>""", AS , """</td>
-                    <td>""", AR , """</td>
+                    <td>""", Mana , """</td>
                     <td>""", MR , """</td>
                     <td>""", Range , """</td>
-                    </tr>""")
+					</tr>
+					""")
+
+
+
 print( """</table>
         </body>
     </html>"""   )

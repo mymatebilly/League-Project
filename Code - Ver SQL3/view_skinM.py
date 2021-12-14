@@ -1,12 +1,23 @@
+#!/usr/bin/env python3
 import sqlite3
 
-Requete = "SELECT Nom, Nom_skin, Prix_skin, Date_skin FROM Champion, Skins, Alphabet WHERE Champion*id_ch = Skins*id_ch AND Champion*id_ch = Alphabet*id_ch AND Lettre = M"
+Requete = Requete = """Select Nom,
+	Nom_skin,
+	Prix_skin,
+	Date_skin
+	FROM Champions, Skins 
+	where 
+	Skins.ID_ch = Champions.ID_ch
+	AND Champions.Nom like "M%";"""
 
 conn = sqlite3.connect('League Project')
 
 cur = conn.cursor()
 
 cur.execute(Requete)
+
+print("Content-type: text/html")
+print("\n\n")
 
 print( """<!doctype html>
 	<html lang="en">

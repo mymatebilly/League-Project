@@ -1,12 +1,16 @@
+#!/usr/bin/env python3
 import sqlite3
 
-Requete = "SELECT Nom, Sexe FROM Champion WHERE Sexe = M"
+Requete = """SELECT Nom, Sexe FROM Champions WHERE Sexe = "M";"""
 
 conn = sqlite3.connect('League Project')
 
 cur = conn.cursor()
 
 cur.execute(Requete)
+
+print("Content-type: text/html")
+print("\n\n")
 
 print( """<!doctype html>
 	<html lang="en">

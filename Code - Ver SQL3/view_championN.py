@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 import sqlite3
 
-Requete = """SELECT Nom, Prix_ch, Date_ch, Nom_item, A, Z, E, R, HP, AD, Mana, AS, MR, Range FROM Champions, Statistiques, Alphabet, Boutique items WHERE Champions.ID_ch = Statistiques.ID_ch AND Champions.ID_ch = Alphabet.ID_ch AND Champions.ID_item = Boutique Items.ID_item AND lettre = "N";"""
-
+Requete = """SELECT Nom, Prix, Date_ch, Nom_item, A, Z, E, R, HP, AD, MP, MR, Rng 
+FROM Champions, Statistiques, Alphabet, Boutique_items WHERE Champions.ID_ch = Statistiques.ID_stat 
+AND Champions.ID_ch = Alphabet.ID_ch AND Champions.ID_item = Boutique_Items.ID_item AND lettre = "N";"""
 
 conn = sqlite3.connect('League Project')
 
@@ -33,10 +34,8 @@ print( """<!doctype html>
 					<td>E</td>
 					<td>R</td>
 					<td>HP</td>
-					<td>Mana</td>
 					<td>AD</td>
-					<td>AS</td>
-					<td>AR</td>
+					<td>Mana</td>
 					<td>MR</td>
 					<td>Range</td>
 				</tr>
@@ -48,7 +47,7 @@ print( """<!doctype html>
 		</body>
 	</html>""" )
     
-for Nom, Prix_ch, Date_ch, Nom_item, A, Z, E, R, HP, Mana, AD, AS, AR, MR, Range in cur.fetchall() :
+for Nom, Prix_ch, Date_ch, Nom_item, A, Z, E, R, HP, AD, Mana, MR, Range in cur.fetchall() :
     print(     """<tr>
                     <td>""", Nom , """</td>
                     <td>""", Prix_ch , """</td>
@@ -59,10 +58,8 @@ for Nom, Prix_ch, Date_ch, Nom_item, A, Z, E, R, HP, Mana, AD, AS, AR, MR, Range
                     <td>""", E , """</td>
                     <td>""", R , """</td>
                     <td>""", HP , """</td>
-                    <td>""", Mana , """</td>
                     <td>""", AD , """</td>
-                    <td>""", AS , """</td>
-                    <td>""", AR , """</td>
+                    <td>""", Mana , """</td>
                     <td>""", MR , """</td>
                     <td>""", Range , """</td>
                     </tr>""")

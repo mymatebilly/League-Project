@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
 import sqlite3
-import cgi
 
-Requete = """SELECT Nom, Nom_lane FROM Champions, Lane, Jouabilite WHERE Champions.id_ch = Jouabilite.id_ch AND Jouabilite.id_ch AND Jouabilite.No_lane = Lane.No_Lane AND Nom_Lane = "Top";"""
+Requete = """SELECT Nom, Nom_lane FROM Champions, Lane, Jouabilite WHERE Champions.ID_ch = Jouabilite.ID_ch AND Jouabilite.ID_ch AND Jouabilite.No_lane = Lane.No_lane AND Nom_lane = "Top";"""
 
 conn = sqlite3.connect('League Project')
 
